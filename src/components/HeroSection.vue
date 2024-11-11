@@ -2,26 +2,13 @@
   <section id="hero" class="hero">
     <h1>Empowering Future Excellence through Unique Learning Solutions</h1>
     <p>Welcome to PULSE - Punyah Unique Learning Solutions for Excellence...</p>
-    <div class="cta-buttons">
-      <!-- Use @click to trigger scrollToSection and prevent page redirection -->
-      <button @click="scrollToSection('offerings')">Explore Our Offerings</button>
-      <button @click="scrollToSection('contact')">Get in Touch</button>
-    </div>
   </section>
 </template>
 
 <script>
 export default {
   methods: {
-    // Scroll method with error handling
-    scrollToSection(id) {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      } else {
-        console.warn(`Section with id "${id}" not found.`);
-      }
-    },
+    // No methods left since there are no buttons
   },
 };
 </script>
@@ -38,11 +25,12 @@ export default {
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
+  justify-content: flex-start; /* Align the content to the top */
   align-items: center; /* Center content horizontally */
   position: relative;
   z-index: 1;
   box-sizing: border-box; /* Ensure padding is within dimensions */
+  padding-top: 50vh; /* Add padding to move text further down */
 }
 
 /* Semi-transparent dark overlay for better text visibility */
@@ -72,35 +60,6 @@ p {
   line-height: 1.6;
 }
 
-.cta-buttons {
-  margin-top: 2rem;
-}
-
-.cta-buttons button {
-  margin: 0.5rem;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 30px;
-  background: linear-gradient(45deg, #322a2a, #2f2a29);
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(255, 99, 71, 0.3);
-  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
-}
-
-.cta-buttons button:hover {
-  background: linear-gradient(45deg, #ff4500, #ff6347);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(255, 99, 71, 0.5);
-}
-
-.cta-buttons button:active {
-  transform: translateY(2px);
-  box-shadow: 0 4px 15px rgba(255, 99, 71, 0.3);
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   h1 {
@@ -109,11 +68,6 @@ p {
 
   p {
     font-size: 1rem;
-  }
-
-  .cta-buttons button {
-    font-size: 1rem;
-    padding: 10px 20px;
   }
 }
 </style>
