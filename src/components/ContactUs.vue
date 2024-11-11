@@ -5,7 +5,12 @@
 
     <!-- Contact Form (hidden initially, shown when button is clicked) -->
     <div v-if="showForm" class="contact-form" ref="contactForm">
-      <h2>Contact Us</h2>
+      <!-- Contact Form Header -->
+      <div class="form-header">
+        <h2>Contact Us</h2>
+        <!-- Close Button (X) -->
+        <button class="close-btn" @click="closeForm">×</button>
+      </div>
 
       <!-- Contact Form Fields -->
       <form @submit.prevent="submitForm">
@@ -46,6 +51,9 @@ export default {
   methods: {
     toggleForm() {
       this.showForm = !this.showForm;
+    },
+    closeForm() {
+      this.showForm = false; // Close the form when the "X" is clicked
     },
     submitForm() {
       // Format the email content
@@ -119,22 +127,47 @@ export default {
   right: 20px;
   transform: translateY(-50%);
   width: 100%;
-  max-width: 400px;
+  max-width: 350px; /* Reduced max-width for a more compact form */
   background: rgba(255, 255, 255, 0.9);
-  padding: 2rem;
+  padding: 1.5rem; /* Reduced padding to shorten the form height */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 19;
 }
 
-.contact-form h2 {
-  margin-bottom: 1.5rem;
-  text-align: center;
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff; /* Blue background for the header */
+  color: white;
+  padding: 8px; /* Reduced padding */
+  border-radius: 3px 3px 0 0;
+}
+
+.form-header h2 {
+  margin: 0;
+  font-size: 16px; /* Reduced font size */
+  font-weight: bold;
+}
+
+.form-header .close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px; /* Reduced font size */
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.form-header .close-btn:hover {
+  color: #ff4d4d; /* Red color on hover */
 }
 
 /* Form Group Styling */
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem; /* Reduced margin */
 }
 
 .form-group label {
@@ -146,7 +179,7 @@ export default {
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 12px;
+  padding: 10px; /* Reduced padding */
   margin-top: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -160,7 +193,7 @@ export default {
 }
 
 .form-group textarea {
-  height: 150px;
+  height: 120px; /* Reduced height for the textarea */
   resize: vertical;
 }
 
@@ -169,12 +202,11 @@ export default {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: 0.6rem 1rem; /* Reduced padding */
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
   margin-top: 1rem;
-  font-size: 16px;
 }
 
 .submit-btn:hover {

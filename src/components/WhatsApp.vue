@@ -7,6 +7,9 @@
 
     <!-- Chat Container (hidden by default) -->
     <div class="chat-container" id="chat-container">
+      <!-- Close Button (X) -->
+      <button class="close-button" id="close-button">X</button>
+
       <div class="chat-header">
         <img src="@/assets/logo.png" alt="Profile Picture" class="profile-picture" />
         <div class="chat-info">
@@ -38,6 +41,7 @@ export default {
     const chatContainer = document.getElementById("chat-container");
     const messageInput = document.getElementById("message-input");
     const sendButton = document.getElementById("sendButton");
+    const closeButton = document.getElementById("close-button");
 
     const whatsappNumber = "+916364411444";
 
@@ -75,6 +79,11 @@ export default {
         sendMessage();
       }
     });
+
+    // Close the chat when "X" button is clicked
+    closeButton.addEventListener("click", () => {
+      chatContainer.style.display = "none";
+    });
   },
 };
 </script>
@@ -89,8 +98,8 @@ export default {
 }
 
 .whatsapp-button img {
-  width: 50px;
-  height: 50px;
+  width: 55px;
+  height: 55px;
 }
 
 .chat-container {
@@ -103,7 +112,24 @@ export default {
   overflow: hidden;
   display: none;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  right: 60px; 
+  right: 60px;
+}
+
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.close-button:hover {
+  color: red;
 }
 
 .chat-header {
@@ -157,13 +183,12 @@ export default {
   margin-left: 0px; /* Adjusted margin */
 }
 
-
 .chat-input {
   padding: 10px;
   background-color: #ffffff;
   display: flex;
   align-items: center;
-  margin-left: 0px; 
+  margin-left: 0px;
 }
 
 .chat-input input {
