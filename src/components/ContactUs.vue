@@ -48,56 +48,50 @@ export default {
       this.showForm = !this.showForm;
     },
     submitForm() {
-      // Handle form submission logic (e.g., sending data to an API or showing a confirmation)
-      console.log("Form submitted with:", this.form);
-      // Reset form
+      // Format the email content
+      const subject = "Contact Us Form Submission";
+      const body = `Name: ${this.form.name}\nEmail: ${this.form.email}\nMessage: ${this.form.message}`;
+
+      // Create the mailto link
+      const mailtoLink = `mailto:contact@ivislabs.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+      // Open the mail client with the pre-filled information
+      window.location.href = mailtoLink;
+
+      // Reset form and close it
       this.form.name = "";
       this.form.email = "";
       this.form.message = "";
-      this.showForm = false; // Close the form after submission
+      this.showForm = false;
     },
     handleClickOutside(event) {
-      // Close the form if clicked outside the form and button
       if (
         this.showForm &&
         !this.$refs.contactForm.contains(event.target) &&
-        !event.target.closest('.contact-btn')
+        !event.target.closest(".contact-btn")
       ) {
-        this.showForm = false; // Close the form
+        this.showForm = false;
       }
     },
   },
   mounted() {
-    // Add event listener when component is mounted
     window.addEventListener("click", this.handleClickOutside);
   },
   beforeUnmount() {
-    // Remove event listener when component is destroyed
     window.removeEventListener("click", this.handleClickOutside);
   },
 };
 </script>
 
 <style scoped>
+/* General Section Styling */
 .about {
-  
   color: #333;
   text-align: center;
-  position: relative; /* For positioning the button */
+  position: relative;
 }
 
-/* Container for the buttons */
-.button-container {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  gap: 10px; /* Space between buttons */
-}
-
-/* Floating Contact Us Button */
+/* Contact Button Styling */
 .contact-btn {
   background-color: #8acdb2;
   color: white;
@@ -107,30 +101,30 @@ export default {
   font-size: 16px;
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transform: rotate(90deg); /* Rotated to make it vertical */
+  transform: rotate(90deg);
   position: fixed;
   right: -30px;
-  bottom: 110px; /* Adjusted to place it above WhatsApp button */
-  z-index: 15; /* Ensuring it's above the WhatsApp button */
+  bottom: 110px;
+  z-index: 15;
 }
 
 .contact-btn:hover {
   background-color: #3f82c9;
 }
 
-/* Styling for the contact form */
+/* Contact Form Styling */
 .contact-form {
   position: fixed;
   top: 50%;
-  right: 20px; /* Positioned on the right */
-  transform: translateY(-50%); /* Center it vertically */
+  right: 20px;
+  transform: translateY(-50%);
   width: 100%;
   max-width: 400px;
   background: rgba(255, 255, 255, 0.9);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 19; /* Behind the button */
+  z-index: 19;
 }
 
 .contact-form h2 {
@@ -138,22 +132,31 @@ export default {
   text-align: center;
 }
 
+/* Form Group Styling */
 .form-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
   display: block;
   font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-top: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
 }
 
 .form-group textarea {
@@ -161,6 +164,7 @@ export default {
   resize: vertical;
 }
 
+/* Submit Button Styling */
 .submit-btn {
   background-color: #007bff;
   color: white;
@@ -170,6 +174,7 @@ export default {
   cursor: pointer;
   width: 100%;
   margin-top: 1rem;
+  font-size: 16px;
 }
 
 .submit-btn:hover {

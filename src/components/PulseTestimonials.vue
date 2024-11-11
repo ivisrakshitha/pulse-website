@@ -54,7 +54,7 @@ export default {
 <style scoped>
 .testimonials {
   padding: 2rem;
-  background-color: #d3dce1;
+  background-color: #c8e1ee;
 }
 
 .testimonials h2 {

@@ -72,11 +72,11 @@ export default {
 
 /* Card layout alternating colors */
 .offering-card:nth-child(even) {
-  background-color: #b6cde4; /* Deep blue for even cards #31473A, #EDF4F2*/
+  background-color: #c2b988; /* Deep blue for even cards #31473A, #EDF4F2*/
 }
 
 .offering-card:nth-child(odd) {
-  background-color: #80b5d1; /* Coral color for odd cards */
+  background-color: #45535a; /* Coral color for odd cards */
 }
 
 /* Alternate image and content layout */

@@ -8,7 +8,7 @@
       <div class="navigation footer-item">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="solution.html">Our Solutions</a></li>
+          <li><router-link to="/pulse-offerings">Our Solutions</router-link></li>
         </ul>
       </div>
       <div class="contact-div footer-item">
@@ -44,6 +44,10 @@
         </ul>
       </div>
     </div>
+
+    <div class="footer-bottom">
+      <p>© 2024 IVIS LABS Private Limited | All Rights Reserved</p>
+    </div>
   </footer>
 </template>
 
@@ -59,9 +63,9 @@ export default {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   padding: 2rem;
-  color: #6c757d;
+  color: #ffffff; /* Changed text color to white */
   font-family: "Roboto", sans-serif;
-  background-color:#dadbdc; /* Light background color */
+  background-color:  #45535a;
 }
 
 .footer-item {
@@ -73,14 +77,14 @@ export default {
 }
 
 .footer-logo img {
-  width: 60px;
+  width: 120px;
   margin-bottom: 0.5rem;
 }
 
 .footer-logo h2 {
-  font-size: 1.25rem;
+  font-size: 1.5vw; /* Increased size */
   font-weight: 600;
-  color: #333;
+  color: #ffffff; /* Ensured header text is white */
 }
 
 .navigation ul,
@@ -96,8 +100,8 @@ export default {
 
 .navigation ul li a {
   text-decoration: none;
-  color: #6c757d;
-  font-size: 0.875rem;
+  color: #ffffff; /* Changed link text color to white */
+  font-size: 1.2vw; /* Increased size */
   transition: color 0.3s;
 }
 
@@ -111,14 +115,19 @@ export default {
   gap: 10px;
 }
 
+.contacts a {
+  font-size: 1.2vw; /* Increased size */
+  color: #ffffff; /* Changed contact link color to white */
+}
+
 .socials .social-icons {
   display: flex;
   gap: 20px;
 }
 
 .icon-content img {
-  width: 40px;
-  height: 40px;
+  width: 3.5vw; /* Slightly larger */
+  height: 3.5vw;
   border-radius: 50%;
   padding: 8px;
   background-color: #007bff;
@@ -132,7 +141,7 @@ export default {
 .tooltip {
   visibility: hidden;
   background-color: #333;
-  color: #fff;
+  color: #ffffff; /* Tooltip text color changed to white */
   text-align: center;
   border-radius: 5px;
   padding: 5px;
@@ -141,7 +150,7 @@ export default {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.75rem;
+  font-size: 1vw; /* Increased size */
   opacity: 0;
   transition: opacity 0.3s;
 }
@@ -151,6 +160,14 @@ export default {
   opacity: 1;
 }
 
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #333;
+  color: #ffffff; /* Footer bottom text color changed to white */
+  font-size: 1.2vw; /* Increased size */
+}
+
 @media (max-width: 768px) {
   .footer {
     grid-template-columns: 1fr;
@@ -158,16 +175,24 @@ export default {
   }
 
   .footer-logo h2 {
-    font-size: 1rem;
+    font-size: 1.75rem;
   }
 
   .navigation ul li a, .contacts a {
-    font-size: 0.875rem;
+    font-size: 1rem;
   }
 
   .icon-content img {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .tooltip {
+    font-size: 0.875rem;
+  }
+
+  .footer-bottom {
+    font-size: 1rem;
   }
 }
 </style>
