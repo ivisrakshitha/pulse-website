@@ -8,7 +8,6 @@
       <div class="navigation footer-item">
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><router-link to="/pulse-offerings">Our Solutions</router-link></li>
         </ul>
       </div>
       <div class="contact-div footer-item">

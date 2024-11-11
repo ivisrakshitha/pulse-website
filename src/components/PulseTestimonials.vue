@@ -1,6 +1,6 @@
 <template>
   <section id="testimonials" class="testimonials">
-    <h2>How It Works</h2>
+    <h2>Our Verticals</h2>
     
     <!-- Navigation Links for Carousel Headings -->
     <div class="carousel-navigation">

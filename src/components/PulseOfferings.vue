@@ -47,7 +47,7 @@ export default {
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2.2rem;
-  color: #333; /* Dark text color for better visibility */
+  color: #ffffff; /* Dark text color for better visibility */
 }
 
 /* Offerings list grid */
@@ -105,7 +105,7 @@ export default {
 }
 
 .offering-card p {
-  color: #ddd;
+  color: #ffffff;
   margin: 0.5rem 0;
   font-size: 1.1rem; /* Slightly larger text for better readability */
 }
