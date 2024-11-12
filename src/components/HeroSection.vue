@@ -15,22 +15,22 @@ export default {
 
 <style scoped>
 .hero {
-  /* Full viewport width */
-  height: 100vh; /* Full viewport height */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margin */
+  /* Full viewport width and height */
+  height: 100vh;
+  padding: 0;
+  margin: 0;
   text-align: center;
   background: url('@/assets/video.gif') no-repeat center center;
-  background-size: cover; /* Cover entire section */
+  background-size: cover;
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align the content to the top */
+  justify-content: center; /* Center content vertically */
   align-items: center; /* Center content horizontally */
   position: relative;
   z-index: 1;
-  box-sizing: border-box; /* Ensure padding is within dimensions */
-  padding-top: 50vh; /* Add padding to move text further down */
+  box-sizing: border-box;
+  padding-top: 20vh; /* Adjust padding to move text down slightly */
 }
 
 /* Semi-transparent dark overlay for better text visibility */
@@ -41,14 +41,14 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
-  z-index: -1; /* Place overlay behind text */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
 }
 
 h1 {
   font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin: 0 1rem; /* Add margin for horizontal padding */
   line-height: 1.2;
   text-transform: uppercase;
 }
@@ -56,18 +56,36 @@ h1 {
 p {
   font-size: 1.25rem;
   font-weight: 300;
-  margin-bottom: 2rem;
+  margin: 0 1rem; /* Add margin for horizontal padding */
   line-height: 1.6;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 1.3;
+    margin: 0 1rem;
   }
 
   p {
     font-size: 1rem;
+    line-height: 1.4;
+    margin: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0 1rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin: 0 1rem;
   }
 }
 </style>

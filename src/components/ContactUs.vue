@@ -126,10 +126,10 @@ export default {
   top: 50%;
   right: 20px;
   transform: translateY(-50%);
-  width: 100%;
-  max-width: 350px; /* Reduced max-width for a more compact form */
+  width: 90%; /* Adjusted width to fit smaller screens */
+  max-width: 350px;
   background: rgba(255, 255, 255, 0.9);
-  padding: 1.5rem; /* Reduced padding to shorten the form height */
+  padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   z-index: 19;
@@ -139,15 +139,15 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #007bff; /* Blue background for the header */
+  background-color: #007bff;
   color: white;
-  padding: 8px; /* Reduced padding */
+  padding: 8px;
   border-radius: 3px 3px 0 0;
 }
 
 .form-header h2 {
   margin: 0;
-  font-size: 16px; /* Reduced font size */
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -155,19 +155,19 @@ export default {
   background: none;
   border: none;
   color: white;
-  font-size: 22px; /* Reduced font size */
+  font-size: 22px;
   cursor: pointer;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
 .form-header .close-btn:hover {
-  color: #ff4d4d; /* Red color on hover */
+  color: #ff4d4d;
 }
 
 /* Form Group Styling */
 .form-group {
-  margin-bottom: 1rem; /* Reduced margin */
+  margin-bottom: 1rem;
 }
 
 .form-group label {
@@ -179,7 +179,7 @@ export default {
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px; /* Reduced padding */
+  padding: 10px;
   margin-top: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -193,7 +193,7 @@ export default {
 }
 
 .form-group textarea {
-  height: 120px; /* Reduced height for the textarea */
+  height: 120px;
   resize: vertical;
 }
 
@@ -202,7 +202,7 @@ export default {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 0.6rem 1rem; /* Reduced padding */
+  padding: 0.6rem 1rem;
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
@@ -212,4 +212,59 @@ export default {
 .submit-btn:hover {
   background-color: #0056b3;
 }
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .contact-form {
+    top: 15%; /* Position the form further down on smaller screens */
+    right: 5%;
+    transform: translateY(0);
+    width: 90%;
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .form-header h2 {
+    font-size: 14px;
+  }
+
+  .form-header .close-btn {
+    font-size: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-form {
+    top: 25%; /* Further lower the form for extra small screens */
+    width: 95%;
+    padding: 0.8rem;
+    right: 2.5%;
+  }
+
+  .form-header h2 {
+    font-size: 12px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .submit-btn {
+    padding: 0.5rem 0.7rem;
+    font-size: 14px;
+  }
+}
+
 </style>
