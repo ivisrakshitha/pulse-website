@@ -16,7 +16,12 @@
     
     <!-- Carousel Content for Video Links -->
     <div class="carousel">
-      <div class="video-card" v-for="(video, index) in testimonials" :key="index" v-show="currentTestimonial === index">
+      <div
+        class="video-card"
+        v-for="(video, index) in testimonials"
+        :key="index"
+        v-show="currentTestimonial === index"
+      >
         <img :src="video.thumbnail" :alt="video.heading" @click="playVideo(video.url)" />
       </div>
     </div>
@@ -24,9 +29,12 @@
 </template>
 
 <script>
+// Import local images for other videos; use a direct link for S3 thumbnail.
 import assessmentsThumbnail from '@/assets/Assessments.gif';
 import robotBasedThumbnail from '@/assets/Robot-Based.gif';
-import jobReadinessThumbnail from '@/assets/Job-Readyness-Program.gif';
+
+// Replace this with the publicly accessible URL or pre-signed URL for S3
+const jobReadinessThumbnail = 'https://ivislabsdocs.s3.ap-south-1.amazonaws.com/pulsewebsite/Job-Readyness-Program.gif';
 
 export default {
   name: "PulseTestimonials",
@@ -77,11 +85,11 @@ export default {
 }
 
 .carousel-navigation span:hover {
-  color: #555;  /* Slight change in color on hover */
+  color: #555;
 }
 
 .carousel-navigation .active {
-  text-decoration: underline; /* Underline the active testimonial text */
+  text-decoration: underline;
 }
 
 .carousel {

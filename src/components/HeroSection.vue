@@ -20,7 +20,7 @@ export default {
   padding: 0;
   margin: 0;
   text-align: center;
-  background: url('@/assets/video.gif') no-repeat center center;
+  background: url('https://ivislabsdocs.s3.ap-south-1.amazonaws.com/pulsewebsite/video.gif') no-repeat center center;
   background-size: cover;
   color: #fff;
   display: flex;
